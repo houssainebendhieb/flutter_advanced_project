@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/feature/login/presentation/widgets/detail_up_stack.dart';
 import 'package:flutter_complete_project/feature/login/presentation/widgets/text_and_logo.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_complete_project/core/theme/text_styles.dart';
 
 class DocApp extends StatelessWidget {
   const DocApp({super.key});
@@ -13,58 +14,44 @@ class DocApp extends StatelessWidget {
       child: Scaffold(
         body: Column(
           children: [
-            const SizedBox(
-              height: 100,
+            SizedBox(
+              height: 50.h,
             ),
             TextAndLogo(),
-
+            SizedBox(
+              height: 20.h,
+            ),
             Stack(
               children: [
                 Container(
-                  height: 500,
-                  child: Center(
-                    child: Opacity(
-                      opacity: 0.1,
-                      child: Container(
-                        height: 400,
-                        child: Row(
-                          children: [
-                            Container(
-                                height: 200,
-                                width: 150.h,
-                                child: Image.asset(
-                                  "assets/images/vector2.png",
-                                  fit: BoxFit.cover,
-                                )),
-                            Container(
-                                height: 200,
-                                width: 150.h,
-                                child: Image.asset(
-                                  "assets/images/vector.png",
-                                  fit: BoxFit.cover,
-                                )),
-                          ],
-                        ),
+                    child: Image.asset(
+                  "assets/images/group.png",
+                  fit: BoxFit.cover,
+                )),
+                Container(
+                  foregroundDecoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          colors: [Colors.white, Colors.white.withOpacity(0.0)],
+                          end: Alignment.topCenter,
+                          begin: Alignment.bottomCenter,
+                          stops: const [0.14, 0.4])),
+                  child: Image.asset("assets/images/Image.png"),
+                ),
+                Positioned(
+                    left: 0,
+                    right: 0,
+                    bottom: 30,
+                    child: Center(
+                      child: Text(
+                        "Best Doctor\nAppointment App",
+                        textAlign: TextAlign.center,
+                        style: styles.textStyle32
+                            .copyWith(fontWeight: FontWeight.w700),
                       ),
-                    ),
-                  ),
-                ),
-                Opacity(
-                  opacity: 1,
-                  child: SizedBox(
-                    width: 443,
-                    height: 500,
-                    child: Image.asset("assets/images/Image.png"),
-                  ),
-                ),
-                const SizedBox(
-                  height: 700,
-                ),
-                Center(child: detail_up_stack()),
+                    )),
               ],
             ),
-
-            //   detail_up_stack()
+            detail_up_stack()
           ],
         ),
       ),
