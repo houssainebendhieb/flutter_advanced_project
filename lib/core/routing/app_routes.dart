@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/routing/routes.dart';
-import 'package:flutter_complete_project/feature/onboarding/logic/presentation/login_screen.dart';
+import 'package:flutter_complete_project/feature/login/presentation/login_screen.dart';
 import 'package:flutter_complete_project/feature/onboarding/presentation/onboarding_screen.dart';
 
 class AppRoutes {

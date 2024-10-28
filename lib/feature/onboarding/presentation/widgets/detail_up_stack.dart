@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:flutter_complete_project/core/theme/text_styles.dart";
 import "package:flutter_complete_project/core/widgets/custom_button.dart";
+import "package:flutter_complete_project/feature/login/presentation/login_screen.dart";
 import "package:flutter_screenutil/flutter_screenutil.dart";
 
 class detail_up_stack extends StatelessWidget {
@@ -25,7 +26,11 @@ class detail_up_stack extends StatelessWidget {
             height: 50.h,
           ),
           custom_button(
-            ontap: () {},
+            ontap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const LoginScreen();
+              }));
+            },
             text: "Get Started",
           )
         ],
