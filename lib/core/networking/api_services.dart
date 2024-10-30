@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_complete_project/core/networking/api_constant.dart';
+import 'package:flutter_complete_project/feature/login/data/models/login_request_body.dart';
 import 'package:flutter_complete_project/feature/login/data/models/login_response.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
@@ -11,6 +12,6 @@ abstract class ApiService {
 
   @POST(ApiConstants.login)
   Future<LoginResponse> login(
-    @Body() Map<String, dynamic> body,
+    @Body() LoginRequestBody body,
   );
 }
